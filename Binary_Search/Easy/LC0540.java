@@ -1,15 +1,19 @@
 package Binary_Search.Easy;
 
-public class LC0153 {
+public class LC0540{
     public static void main(String[] args) {
-        int[] nums ={3,4,5,1,2};
+        int[] nums = {1,1,2,3,3,4,4,8,8};
         int low = 0;
         int high = nums.length-1;
 
         while(high > low){
             int mid = low + (high-low)/2;
-            if(nums[mid] > nums[high]){
-                low = mid+1;
+            if(mid % 2 == 1){
+                mid--;
+            }
+
+            if(nums[mid] == nums[mid+1]){
+                low = mid + 2;
             }else{
                 high = mid;
             }
