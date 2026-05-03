@@ -4,7 +4,6 @@ public class LC0151 {
     public static void main(String[] args) {
         String s = "a good   example  ";
         s = s.trim();
-        System.out.println(s);
 
         StringBuilder sb = new StringBuilder();
 
@@ -15,7 +14,6 @@ public class LC0151 {
                 sb.append(" ");
             }
         }
-
         System.out.println(sb.toString());
     }
 }
