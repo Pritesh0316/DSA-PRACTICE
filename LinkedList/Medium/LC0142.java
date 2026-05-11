@@ -9,7 +9,7 @@ class ListNode {
     }
 }
 
-public class LC0141 {
+public class LC0142 {
     public static void main(String[] args) {
         ListNode head = new ListNode(3);
         head.next = new ListNode(2);
@@ -20,17 +20,29 @@ public class LC0141 {
 
         ListNode slow = head;
         ListNode fast = head;
+        boolean isCycle = false;
 
-        while(fast != null && fast.next != null){
+        while(fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
 
             if(slow == fast){
-                System.out.println("True");
-                return;
+                isCycle = true;
+                break;
             }
         }
 
-        System.out.println("False");
+        if(!isCycle){
+            System.out.println("null");
+            return;
+        }
+
+        slow = head;
+        while(fast != slow){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        System.out.println(slow.val);
     }
 }
